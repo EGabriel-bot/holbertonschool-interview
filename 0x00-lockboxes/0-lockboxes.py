@@ -8,9 +8,9 @@ def canUnlockAll(boxes):
     allBoxes = len(boxes)
 
     for box in range(len(boxes)):
-        if keyMatch == box: # checks if iterative number is equal to the position of the box
+        if keyMatch == box:
             keyMatch += 1
-        if boxes[box] == [] and boxes[-1] != []: # checks if an empty box exists at the last position of the boxes
+        if boxes[box] == [] and boxes[-1] != []:
             break
     if keyMatch == allBoxes:
         return True
