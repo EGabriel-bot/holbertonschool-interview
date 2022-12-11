@@ -5,16 +5,14 @@
 def canUnlockAll(boxes):
     """ Write a method that determines if all the boxes can be opened. """
     keyMatch = 0
-    matched = False
+    allBoxes = len(boxes)
 
     for box in range(len(boxes)):
-        if keyMatch == box:
+        if keyMatch == box: # checks if iterative number is equal to the position of the box
             keyMatch += 1
-            matched = True
-        if boxes[box] == [] and boxes[-1] != []:
-            matched = False
+        if boxes[box] == [] and boxes[-1] != []: # checks if an empty box exists at the last position of the boxes
             break
-    if matched is False:
-        return False
-    else:
+    if keyMatch == allBoxes:
         return True
+    else:
+        return False
